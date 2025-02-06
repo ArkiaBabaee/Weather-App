@@ -4,27 +4,17 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
-
-  // select the temperature element
-  //inject the current temperature inside the temperature elemenet
-  // Inject the city name inside the temperature
 }
 
 function search(event) {
   event.preventDefault();
-  
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
-  let apiKey = "b505be33b0cc88aod2cd1fb2a201694t";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query={city}&key=${apiKey}&units=metric`;
-// creat API Url
-// make the API call
-// Display the temperatue 
 
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  //cityElement.innerHTML = searchInputElement.value;
   axios.get(apiUrl).then(displayTemperature);
-  
 }
 
 function formatDate(date) {
